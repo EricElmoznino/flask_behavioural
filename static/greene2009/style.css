@@ -8,7 +8,7 @@ body {
 	top:5px;
 	margin: 0 auto;
     padding-bottom: 20px;
-	width:1050px;
+	width:800px;
 	border: 2px solid gray;
 	text-align: center;
 }
@@ -43,8 +43,8 @@ body {
 
 #trial {
     padding: 20px;
-    width: 1050px;
-    min-height: 600px;
+    width: 800px;
+    min-height: 630px;
     margin: 0 auto;
     display: none;
     text-align: center;
@@ -73,12 +73,12 @@ body {
 
 #option1box {
     float: left;
-    margin-left: 350px;
+    margin-left: 150px;
 }
 
 #option2box {
     float: right;
-    margin-right: 350px;
+    margin-right: 150px;
 }
 
 #nextTrialMessage {

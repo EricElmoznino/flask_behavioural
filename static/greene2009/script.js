@@ -83,7 +83,6 @@ function doneExperiment() {
         dataType: "json",
         contentType: "application/json",
         success: function (response) {
-            console.log("testing123");
             $("#trial").hide();
             $(document).unbind("keydown.responded");
             $(document).unbind("keydown.nextTrial");
