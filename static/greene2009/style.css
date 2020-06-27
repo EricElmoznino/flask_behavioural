@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, Helvetica, serif;
+    font-size: 14pt;
+}
+
+.container{
+	position: relative;
+	top:5px;
+	margin: 0 auto;
+    padding-bottom: 20px;
+	width:1050px;
+	border: 2px solid gray;
+	text-align: center;
+}
+
+#instructions {
+	margin: 0 auto;
+	width: 680px;
+	font-size: 16px;
+}
+
+.button {
+    width: 200px;
+    text-align: center;
+    background: gray;
+    padding: 5px;
+    margin: 10px auto;
+}
+
+.buttonText {
+    color: rgb(200,200,200);
+    text-decoration: none;
+}
+
+.buttonText:hover {
+    color: white;
+}
+
+#trainEndWarning {
+    display: none;
+    color: red;
+}
+
+#trial {
+    padding: 20px;
+    width: 1050px;
+    min-height: 600px;
+    margin: 0 auto;
+    display: none;
+    text-align: center;
+    border: 2px solid gray;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50.00%;
+  padding: 5px;
+}
+
+#trialOptions{
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.option {
+    padding: 5px 20px;
+    margin: 5px auto;
+}
+
+#option1box {
+    float: left;
+    margin-left: 350px;
+}
+
+#option2box {
+    float: right;
+    margin-right: 350px;
+}
+
+#nextTrialMessage {
+    display: none;
+}

@@ -13,7 +13,44 @@
 </head>
 <body>
 
-<p>Testing123</p>
+<div class="container" id="instructionsContainer">
+    <div id="instructions">
+        <h2>Welcome to our study!</h2>
+        <p>This is a psychology experiment in which you will be shown <b>pairs of images</b> and will need to <b>decide  whether or not the images come from the same room</b>. When the two images do come from the same room, their views will be pointing in a similar direction (see images below of floor plans and views that illustrate this point). The task will take about <b>3 minutes</b> to complete.</p>
+        <p>Before the task begins, there will be a brief <b>training session</b>. This training session will be identical to the actual experiment in every way, except that your responses will not be recorded and you will obtain feedback about the correct answers. The purpose of the training session is to give you a better understanding of the task.</p>
+        <h2>Consent</h2>
+        <p>This task is completely anonymous. By completing the task, you are consenting to be in this research study. Your participation is voluntary and you can stop at any time. If you are ready, check the box below to indicate your consent.</p>
+        <p><input type="checkbox" name="consent_check" value="agree" id="consent"> I agree to participate. </p>
+        <div id="startExperimentButton" class="button">
+            <a href="#" class="buttonText" id="startExperiment">Ready to begin!</a>
+        </div>
+    </div>
+</div>
+
+<div id="trial">
+    <h2 id="sessionMode">Training segment</h2>
+    <div class="row">
+        <div class="column">
+            <img width="480" height="270" id="trialImg1" src="">
+        </div>
+        <div class="column">
+            <img width="480" height="270" id="trialImg2" src="">
+        </div>
+    </div>
+    <div id="trialOptions">
+        <h3>Which of these images is more concealed?</h3>
+        <div class="option" id="option1box"><strong id="option1">Left</strong><br />(Press 'F')</div>
+        <div class="option" id="option2box"><strong id="option2">Right</strong><br />(Press 'J')</div>
+    </div>
+    <div id="nextTrialMessage">
+        <p>Press 'Space' to continue</p>
+    </div>
+    <div id="trainEndWarning">
+        <h2>Warning!!!</h2>
+        <p>This was the last trial in the training session. The experiment begins with the next presented images. Tick the box below to confirm that you are ready to begin the experiment before pressing the 'Next' button.</p>
+        <p><input type="checkbox" id="proceedExperiment"> I am ready to begin. </p>
+    </div>
+</div>
 
 </body>
 </html>
