@@ -10,6 +10,7 @@ if (debug) {
 var trials = [];
 var curTrial = 0;
 var curResponse = null;
+var loadedImages = {};
 var nTraining;
 var trialStartTime;
 var experimentStartTime;
@@ -158,10 +159,51 @@ function getTrials(callback) {
             var testTrials = response["trials"]["test"];
             nTraining = trainTrials.length;
             trials = trainTrials.concat(testTrials);
-            callback();
+            preloadStimuli(callback, response["imagePaths"])
         },
         error: e => console.log(e)
     });
+}
+
+var numImages;
+var imgCounter = 0;
+
+function preloadStimuli(callback, images) {
+    numImages = images.length;
+    for (var i = 0; i < numImages; i++) {
+        preloadImg(images[i])
+    }
+    waitForStimuliToPreload(callback);
+    console.log('Image preloading complete.');
+}
+
+function preloadImg(image) {
+    let imagePath = rootPath + image;
+    loadImage(imagePath).then((img) => {
+        console.log("Preloading:", img);
+        loadedImages[image] = img;
+        imgCounter++;
+        console.log('Image preloading progress: ' + Math.round(100 * (imgCounter / numImages)) + '%');
+    });
+}
+
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        var img = new Image();
+        img.onload = () => resolve(img);
+        img.src = src;
+    });
+}
+
+function waitForStimuliToPreload(callback) {
+    if (imgCounter < numImages) {
+        setTimeout(function () {
+            waitForStimuliToPreload(callback)
+        }, 24);
+    } else {
+        // load trial
+        callback();
+    }
 }
 
 $(document).ready(function () {
