@@ -13,16 +13,30 @@
 </head>
 <body>
 
-<div class="container" id="instructionsContainer">
-    <div id="instructions">
-        <h2>Welcome to our study!</h2>
-        <p>This is a psychology experiment in which you will be shown <b>pairs of images</b> and will need to <b>decide  whether or not the images come from the same room</b>. When the two images do come from the same room, their views will be pointing in a similar direction (see images below of floor plans and views that illustrate this point). The task will take about <b>3 minutes</b> to complete.</p>
-        <p>Before the task begins, there will be a brief <b>training session</b>. This training session will be identical to the actual experiment in every way, except that your responses will not be recorded and you will obtain feedback about the correct answers. The purpose of the training session is to give you a better understanding of the task.</p>
-        <h2>Consent</h2>
-        <p>This task is completely anonymous. By completing the task, you are consenting to be in this research study. Your participation is voluntary and you can stop at any time. If you are ready, check the box below to indicate your consent.</p>
-        <p><input type="checkbox" name="consent_check" value="agree" id="consent"> I agree to participate. </p>
-        <div id="startExperimentButton" class="button">
-            <a href="#" class="buttonText" id="startExperiment">Ready to begin!</a>
+<div class="container" id="instructions">
+    <h2>Welcome to our study!</h2>
+    <p>This is a psychology experiment in which you will be shown <b>pairs of images</b> reminiscent of natural scenes and will need to judge which one <b>has more concealment</b>. The task will take about <b>3 minutes</b> to complete.</p>
+    <p>For the purposes of this study, the <b>concealment</b> of a scene is meant to be understood as follows:</p>
+    <ul style="text-align: left">
+      <li><b>Low concealment:</b> If standing in the scene, one would be easily seen.</li>
+      <li><b>High concealment:</b> The scene contains many accessible hiding spots, and there may be hidden objects in the scene.</li>
+    </ul>
+    <p>High/low concealment examples are shown at the bottom of this page. Note that during the experiment, <b>most of the images might not look like real scenes</b>, and will be far more abstract. Nevertheless, do your best to make judgements about concealment as if the images were of real scenes.</p>
+    <p>Before the task begins, there will be a brief <b>training session</b>. This training session will be identical to the actual experiment in every way, except that your responses will not be recorded. The purpose of the training session is to give you a better understanding of the task.</p>
+    <h2>Consent</h2>
+    <p>This task is completely anonymous. By completing the task, you are consenting to be in this research study. Your participation is voluntary and you can stop at any time. If you are ready, check the box below to indicate your consent.</p>
+    <p><input type="checkbox" name="consent_check" value="agree" id="consent"> I agree to participate. </p>
+    <div id="startExperimentButton" class="button">
+        <a href="#" class="buttonText" id="startExperiment">Ready to begin!</a>
+    </div>
+    <div class="row">
+        <div class="column">
+            <p>The image below has <b>low concealment</b></p>
+            <img src="static/greene2009/concealment/examples/neg.jpg">
+        </div>
+        <div class="column">
+            <p>The image below has <b>high concealment</b></p>
+            <img src="static/greene2009/concealment/examples/pos.jpg">
         </div>
     </div>
 </div>
@@ -38,9 +52,15 @@
         </div>
     </div>
     <div id="trialOptions">
-        <h3>Which of these images is more concealed?</h3>
+        <p>Which of these has <b>more</b> concealment?</p>
         <div class="option" id="option1box"><strong id="option1">Left</strong><br />(Press 'F')</div>
         <div class="option" id="option2box"><strong id="option2">Right</strong><br />(Press 'J')</div>
+    </div>
+    <div id="definitions">
+        <ul style="text-align: left">
+          <li><b>Low concealment:</b> If standing in the scene, one would be easily seen.</li>
+          <li><b>High concealment:</b> The scene contains many accessible hiding spots, and there may be hidden objects in the scene.</li>
+        </ul>
     </div>
     <div id="nextTrialMessage">
         <p>Press 'Space' to continue</p>
@@ -50,6 +70,11 @@
         <p>This was the last trial in the training session. The experiment begins with the next presented images. Tick the box below to confirm that you are ready to begin the experiment before pressing the 'Next' button.</p>
         <p><input type="checkbox" id="proceedExperiment"> I am ready to begin. </p>
     </div>
+</div>
+
+<div class="container" id="completed">
+    <p>Your responses have been recorded</p>
+    <h2>Thank you for participating in the study!</h2>
 </div>
 
 </body>

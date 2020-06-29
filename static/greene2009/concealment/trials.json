@@ -1,0 +1,38 @@
+{
+  "train": {
+    "positives": [
+      "NA008313.jpg",
+      "TR007191.jpg"
+    ],
+    "negatives": [
+      "547077.jpg",
+      "50092.jpg"
+    ]
+  },
+  "test": {
+    "positives": [
+      "NA007023.jpg",
+      "83000.jpg",
+      "LS001988.jpg",
+      "86059.jpg",
+      "CSM003956.jpg"
+    ],
+    "negatives": [
+      "44030.jpg",
+      "TR004833.jpg",
+      "AA005954.jpg",
+      "TR004969.jpg",
+      "603026.jpg"
+    ]
+  },
+  "catch": {
+    "positives": [
+      "266095.jpg",
+      "NLA_082.jpg"
+    ],
+    "negatives": [
+      "NA000910.jpg",
+      "NA008635.jpg"
+    ]
+  }
+}

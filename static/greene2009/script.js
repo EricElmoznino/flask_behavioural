@@ -1,4 +1,4 @@
-let debug = false;
+let debug = true;
 
 /* Parameters */
 let rootPath = "https://ee.cognitivestudies.online/";
@@ -86,8 +86,7 @@ function doneExperiment() {
             $("#trial").hide();
             $(document).unbind("keydown.responded");
             $(document).unbind("keydown.nextTrial");
-            // todo: Display a thank you message
-            // todo: Take the participant back to Prolific (maybe after they press some button)
+            $("#completed").show();
         },
         error: e => console.log(e)
     });
@@ -95,7 +94,7 @@ function doneExperiment() {
 
 function startExperiment() {
     experimentStartTime = new Date();
-    $("#instructionsContainer").hide();
+    $("#instructions").hide();
     $("#trial").show();
 
     // Keyboard events
@@ -207,6 +206,7 @@ function waitForStimuliToPreload(callback) {
 
 $(document).ready(function () {
     $("#trial").hide();
+    $("#completed").hide();
     getTrials(function () {
         $("#startExperiment").click(function () {
             if ($("#consent").prop("checked") === false) {

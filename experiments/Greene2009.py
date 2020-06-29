@@ -18,7 +18,7 @@ class Greene2009(BaseExperiment):
             self.data = json.loads(f.read())
 
         conditions = os.listdir(self.data_dir)
-        self.rois = [c for c in conditions if c != 'catch' and c != 'trials.json']
+        self.rois = [c for c in conditions if c not in ['catch', 'examples', 'trials.json']]
 
     def generate_trials(self):
         # Randomize positive/negative pairs of the test set

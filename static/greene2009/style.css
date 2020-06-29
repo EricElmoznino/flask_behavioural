@@ -5,17 +5,12 @@ body {
 
 .container{
 	position: relative;
-	top:5px;
+    padding: 20px;
 	margin: 0 auto;
     padding-bottom: 20px;
 	width:800px;
 	border: 2px solid gray;
 	text-align: center;
-}
-
-#instructions {
-	margin: 0 auto;
-	width: 680px;
 	font-size: 16px;
 }
 
@@ -44,9 +39,8 @@ body {
 #trial {
     padding: 20px;
     width: 800px;
-    min-height: 630px;
+    min-height: 704px;
     margin: 0 auto;
-    display: none;
     text-align: center;
     border: 2px solid gray;
 }
