@@ -15,28 +15,29 @@
 
 <div class="container" id="instructions">
     <h2>Welcome to our study!</h2>
-    <p>This is a psychology experiment in which you will be shown <b>pairs of images</b> reminiscent of natural scenes and will need to judge which one <b>has more concealment</b>. The task will take about <b>3 minutes</b> to complete.</p>
-    <p>For the purposes of this study, the <b>concealment</b> of a scene is meant to be understood as follows:</p>
+    <p>This is a psychology experiment in which you will be shown <b>pairs of images</b> reminiscent of natural scenes and will need to judge which one <b>{{ data.goal }}</b>. The task will take about <b>3 minutes</b> to complete.</p>
+    <p>For the purposes of this study, the <b>{{ data.attribute }}</b> of a scene is meant to be understood as follows:</p>
     <ul style="text-align: left">
-      <li><b>Low concealment:</b> If standing in the scene, one would be easily seen.</li>
-      <li><b>High concealment:</b> The scene contains many accessible hiding spots, and there may be hidden objects in the scene.</li>
+      <li><b>{{ data.negLabel }}:</b> {{ data.negDescription }}</li>
+      <li><b>{{ data.posLabel }}:</b> {{ data.posDescription }}</li>
     </ul>
-    <p>High/low concealment examples are shown at the bottom of this page. Note that during the experiment, <b>most of the images might not look like real scenes</b>, and will be far more abstract. Nevertheless, do your best to make judgements about concealment as if the images were of real scenes.</p>
+    <p>High/low {{ data.attribute }} examples are shown at the bottom of this page. Note that during the experiment, <b>most of the images might not look like real scenes</b>, and will be far more abstract. Nevertheless, do your best to make judgements about
+        {{ data.attribute }} as if the images were of real scenes.</p>
     <p>Before the task begins, there will be a brief <b>training session</b>. This training session will be identical to the actual experiment in every way, except that your responses will not be recorded. The purpose of the training session is to give you a better understanding of the task.</p>
     <h2>Consent</h2>
-    <p>This task is completely anonymous. By completing the task, you are consenting to be in this research study. Your participation is voluntary and you can stop at any time. If you are ready, check the box below to indicate your consent.</p>
+    <p>By completing this survey, you are consenting to be in this research study. The data we collect is completely anonymous. Your participation is voluntary and you can stop at any time. If you are ready, check the box below to indicate your consent.</p>
     <p><input type="checkbox" name="consent_check" value="agree" id="consent"> I agree to participate. </p>
     <div id="startExperimentButton" class="button">
         <a href="#" class="buttonText" id="startExperiment">Ready to begin!</a>
     </div>
     <div class="row">
         <div class="column">
-            <p>The image below has <b>low concealment</b></p>
-            <img src="static/greene2009/concealment/examples/neg.jpg">
+            <p>The image below has <b>{{ data.negLabel }}</b></p>
+            <img src="static/greene2009/{{ data.attribute }}/examples/neg.jpg">
         </div>
         <div class="column">
-            <p>The image below has <b>high concealment</b></p>
-            <img src="static/greene2009/concealment/examples/pos.jpg">
+            <p>The image below has <b>{{ data.posLabel }}</b></p>
+            <img src="static/greene2009/{{ data.attribute }}/examples/pos.jpg">
         </div>
     </div>
 </div>
@@ -52,14 +53,14 @@
         </div>
     </div>
     <div id="trialOptions">
-        <p>Which of these has <b>more</b> concealment?</p>
+        <p>Which of these <b>{{ data.goal }}</b>?</p>
         <div class="option" id="option1box"><strong id="option1">Left</strong><br />(Press 'F')</div>
         <div class="option" id="option2box"><strong id="option2">Right</strong><br />(Press 'J')</div>
     </div>
     <div id="definitions">
         <ul style="text-align: left">
-          <li><b>Low concealment:</b> If standing in the scene, one would be easily seen.</li>
-          <li><b>High concealment:</b> The scene contains many accessible hiding spots, and there may be hidden objects in the scene.</li>
+          <li><b>{{ data.negLabel }}:</b> {{ data.negDescription }}</li>
+          <li><b>{{ data.posLabel }}:</b> {{ data.posDescription }}</li>
         </ul>
     </div>
     <div id="nextTrialMessage">

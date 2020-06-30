@@ -5,9 +5,10 @@ from datetime import datetime
 
 class BaseExperiment:
 
-    def __init__(self, name, web_path):
+    def __init__(self, name, template, template_data):
         self.name = name
-        self.web_path = web_path
+        self.template = template
+        self.template_data = template_data
 
         self.save_dir = os.path.join('results', name)
         if not os.path.exists(self.save_dir):

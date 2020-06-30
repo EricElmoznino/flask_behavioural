@@ -4,14 +4,12 @@ random.seed(27)
 import json
 from .BaseExperiment import BaseExperiment
 
-name = 'concealment'
-
 
 class Greene2009(BaseExperiment):
 
-    def __init__(self):
+    def __init__(self, name):
         super().__init__(name='greene2009_{}'.format(name),
-                         web_path='static/greene2009/' + name + '.html')
+                         template='greene2009.html', template_data=template_data['concealment'])
 
         self.data_dir = 'static/greene2009/' + name
         with open(os.path.join(self.data_dir, 'trials.json'), 'r') as f:
@@ -68,3 +66,13 @@ class Greene2009(BaseExperiment):
             }
 
             return trial
+
+
+template_data = {
+    'concealment': {
+        'attribute': 'concealment', 'goal': 'has more concealment',
+        'negLabel': 'Low concealment', 'posLabel': 'High concealment',
+        'negDescription': 'If standing in the scene, one would be easily seen.',
+        'posDescription': 'The scene contains many accessible hiding spots, and there may be hidden objects in the scene.'
+    }
+}

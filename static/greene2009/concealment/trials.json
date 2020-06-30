@@ -2,35 +2,97 @@
   "train": {
     "positives": [
       "NA008313.jpg",
-      "TR007191.jpg"
+      "TR007191.jpg",
+      "NA007023.jpg",
+      "83000.jpg"
     ],
     "negatives": [
       "547077.jpg",
-      "50092.jpg"
+      "50092.jpg",
+      "44030.jpg",
+      "TR004833.jpg"
     ]
   },
   "test": {
     "positives": [
-      "NA007023.jpg",
-      "83000.jpg",
       "LS001988.jpg",
       "86059.jpg",
-      "CSM003956.jpg"
+      "CSM003956.jpg",
+      "NA003469.jpg",
+      "E003764.jpg",
+      "482008.jpg",
+      "AA048712.jpg",
+      "NA001472.jpg",
+      "480031.jpg",
+      "482082.jpg",
+      "cdMC318.jpg",
+      "86055.jpg",
+      "NA000139.jpg",
+      "150056.jpg",
+      "NA000376.jpg",
+      "150099.jpg",
+      "NA002401.jpg",
+      "50058.jpg",
+      "86080.jpg",
+      "86056.jpg",
+      "AA002394.jpg",
+      "NA002665.jpg",
+      "151008.jpg",
+      "86023.jpg",
+      "95041.jpg",
+      "NLA_028.jpg",
+      "NA008642.jpg",
+      "NA007564.jpg",
+      "NA000900.jpg",
+      "86057.jpg"
     ],
     "negatives": [
-      "44030.jpg",
-      "TR004833.jpg",
       "AA005954.jpg",
       "TR004969.jpg",
-      "603026.jpg"
+      "603026.jpg",
+      "NA006526.jpg",
+      "NA005007.jpg",
+      "NA006361.jpg",
+      "19024.jpg",
+      "228063.jpg",
+      "AA005940.jpg",
+      "44022.jpg",
+      "151063.jpg",
+      "NA002953.jpg",
+      "151027.jpg",
+      "NA003425.jpg",
+      "50009.jpg",
+      "NA004090.jpg",
+      "251007.jpg",
+      "18025.jpg",
+      "TR006875.jpg",
+      "243034.jpg",
+      "480045.jpg",
+      "18026.jpg",
+      "cdMC988.jpg",
+      "TR002916.jpg",
+      "531076.jpg",
+      "E001895.jpg",
+      "NA005219.jpg",
+      "NA009092.jpg",
+      "NA000921.jpg",
+      "NA007092.jpg"
     ]
   },
   "catch": {
     "positives": [
+      "380019.jpg",
+      "86066.jpg",
+      "NA003449.jpg",
+      "AA027527.jpg",
       "266095.jpg",
       "NLA_082.jpg"
     ],
     "negatives": [
+      "238048.jpg",
+      "479010.jpg",
+      "255001.jpg",
+      "p0313009.jpg",
       "NA000910.jpg",
       "NA008635.jpg"
     ]

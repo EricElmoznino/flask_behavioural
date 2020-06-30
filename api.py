@@ -1,8 +1,8 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, render_template
 from flask_cors import CORS
 from experiments import *
 
-experiment = Greene2009()
+experiment = Greene2009(name='concealment')
 
 app = Flask(__name__)
 CORS(app)
@@ -10,7 +10,7 @@ CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
-    return send_file(experiment.web_path)
+    return render_template(experiment.template, data=experiment.template_data)
 
 
 @app.route('/get_trials', methods=['GET'])
