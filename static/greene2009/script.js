@@ -1,9 +1,11 @@
 let debug = true;
 
 /* Parameters */
-let rootPath = "https://ee.cognitivestudies.online/";
+var rootPath = "https://ee.cognitivestudies.online/";
+var urlProlific = null;
 if (debug) {
     rootPath = "http://127.0.0.1:5000/";
+    urlProlific = rootPath;
 }
 
 /* Globals */
@@ -24,6 +26,11 @@ var posImages = [];
 var negImages = [];
 var conditions = [];
 var reactionTimes = [];
+
+/* Prolific data */
+var prolificPID = null;
+var studyID = null;
+var sessionID = null;
 
 function trialDone() {
     if (!training) {
@@ -78,7 +85,8 @@ function doneExperiment() {
             "Response": responses, "Response Hand": responseHands,
             "Positive Image": posImages, "Negative Image": negImages,
             "Condition": conditions, "Reaction Time": reactionTimes,
-            "Experiment Time": new Date() - experimentStartTime
+            "Experiment Time": new Date() - experimentStartTime,
+            "Prolific PID": prolificPID, "Study ID": studyID, "Session ID": sessionID
         }),
         dataType: "json",
         contentType: "application/json",
@@ -87,12 +95,16 @@ function doneExperiment() {
             $(document).unbind("keydown.responded");
             $(document).unbind("keydown.nextTrial");
             $("#completed").show();
+            redirectToProlific();
         },
         error: e => console.log(e)
     });
 }
 
 function startExperiment() {
+    // Get Prolific data
+    [prolificPID, studyID, sessionID] = getProlificInfo();
+
     experimentStartTime = new Date();
     $("#instructions").hide();
     $("#trial").show();
@@ -216,3 +228,38 @@ $(document).ready(function () {
         });
     });
 });
+
+/* Prolific helper functions */
+
+function getProlificInfo() {
+    let urlParams = new URLSearchParams(window.location.search);
+    prolificPID = urlParams.get("PROLIFIC_PID");
+    studyID = urlParams.get("STUDY_ID");
+    sessionID = urlParams.get("SESSION_ID");
+    if (prolificPID == null) {
+        prolificPID = 'NO-SUBJ-ID';
+    }
+    return [prolificPID, studyID, sessionID];
+}
+
+var finalCountDownClock = 3;
+
+function redirectToProlific() {
+    // set url
+    $('#urlProlific').text(urlProlific);
+    $('#urlProlific').attr("href", urlProlific);
+    $('#countDown').text((finalCountDownClock).toString());
+    redirectTimer = setInterval(countDown, 1000);
+}
+
+function countDown () {
+    finalCountDownClock--;
+    if (finalCountDownClock == 0) {
+        // clear countdown
+        clearInterval(redirectTimer);
+        // redirect
+        window.location = urlProlific;
+    } else {
+        $('#countDown').text((finalCountDownClock).toString());
+    }
+}
