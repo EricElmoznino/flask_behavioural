@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from flask_cors import CORS
 from experiments import *
 
-experiment = Greene2009(name='concealment')
+experiment = Greene2009(name='depth')
 
 app = Flask(__name__)
 CORS(app)

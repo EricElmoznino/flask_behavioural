@@ -9,7 +9,7 @@ class Greene2009(BaseExperiment):
 
     def __init__(self, name):
         super().__init__(name='greene2009_{}'.format(name),
-                         template='greene2009.html', template_data=template_data['concealment'])
+                         template='greene2009.html', template_data=template_data[name])
 
         self.data_dir = 'static/greene2009/' + name
         with open(os.path.join(self.data_dir, 'trials.json'), 'r') as f:
@@ -74,5 +74,11 @@ template_data = {
         'negLabel': 'Low concealment', 'posLabel': 'High concealment',
         'negDescription': 'If standing in the scene, one would be easily seen.',
         'posDescription': 'The scene contains many accessible hiding spots, and there may be hidden objects in the scene.'
-    }
+    }, 'depth': {
+        'attribute': 'depth', 'goal': 'has more depth',
+        'negLabel': 'Low depth', 'posLabel': 'High depth',
+        'negDescription': 'The scene takes up less than a few feet of space.',
+        'posDescription': 'The scene takes up miles of depth.'
+    },
+
 }
